@@ -34,14 +34,12 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: sravani03
+          password: dckr_pat_tz55psufIuSMgNSgHERF4b0mNqk
 
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/flask-cicd:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/flask-cicd:${{ github.sha }}
+          tags: sravani03/flask-cicd
